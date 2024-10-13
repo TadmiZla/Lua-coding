@@ -7,7 +7,7 @@ local coins = Instance.new("IntValue")
 coins.Name = "coins"
 coins.Parent = leaderstats
 coins.Value = 0
-While true do
+while true do
     task.wait(1)
     coins.Value = coins.Value + 1 
  end 
