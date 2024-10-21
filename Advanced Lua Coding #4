@@ -1,1 +1,62 @@
 -- Task Functions --
+
+wait
+Delay
+Spawn
+Cancel
+Defer
+
+Wait, birşeyin görevini senin belirlediğin saniye boyunca tamamen durdurur. Örnek: print("Hi") 
+Task.Wait(5)
+print("hello")
+
+Delay, delay birşeyi geçiktirerek yaptırır, örnek:
+print("hi")
+task.delay(5, function()
+  print("hiiii")
+end)
+print("hello")
+
+böylelikle önce "hi" ı printliyecek sonra hiiii yerine hello yu printliyecek ve en son hiiii gelicek çünkü delay ledik. 
+
+Spawn, spawn 2 şeyi aynı anda çalıştırmamıza yarar yani diyelim ki 2 while loop umuz var eğer çalıştırırsak önce birinci loop başlar ve birinci BİTİNCE ozaman 2 inci çalışır aba spawn sayesinde 2 sinide aynı anda çalıştıra biliriz. Örnek:
+
+local İsLooping = true
+
+task.spawn(function()
+  while İsLooping do
+     print("hi")
+     task.wait()
+  end
+end) 
+
+for i = 1, 10 do
+  print("hello")
+ task.wait()
+end
+İsLooping = false
+
+cancel, bir loop un veya bir kodun çalışmamasını sağlar. Örnek:
+
+local delayTask = task.delay(5, function()
+    print("after x2")
+end)
+
+local randomNumber = math.random(1, 2)
+if randomNumber == 1 then
+    task.cancel(delayTask)
+    print("the random number has been picked")
+end
+
+
+defer, belli birkaç kod un en sonunda printlenir herhangi bir gecikme olmaksızın. Örnek:
+
+print("Start")
+
+task.defer(function()
+    print("Deferred function")
+end)
+
+print("End")
+
+
