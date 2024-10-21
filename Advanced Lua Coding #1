@@ -1,1 +1,11 @@
-İnput
+-- Local Script/ Server Client --
+
+local script ler kişiye özeldir yani tüm oyuncuların değil de özellikle bir oyuncunun görnesini istediğimizde local script kullanırız, daha iyi bir örnek Pet simulator X daha önce oyunu oynamış biri başlangıç bölümündeki ilk bariyer i satın aldığı için oradan geçebilir fakat yeni başlayan bir oyuncu geçemez çünkü ilk bariyeri satın almamıştır. Roblox studio da denemek istersen Workspace --> Part --> StarterPlayerScript --> local script --> 
+
+local part = game.Workspace.WaitForChild("Part")
+
+part.Touched:Connect(function()
+  part.BrickColor = BrickColor.new("Really red") 
+end)
+
+ 
