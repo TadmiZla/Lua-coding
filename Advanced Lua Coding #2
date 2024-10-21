@@ -1,0 +1,17 @@
+-- Remove/Destroy/Debris --
+
+Remove bişeyi siler ama tam anlamıyla değil yani sadece o şeyim parent ini nil yapar, çok kullanışlı değil.
+
+Destroy bişey den tamamen kurtulur o şeyin parent ini nil yapar ve parent ini kitler yani parent atanamaz bi hale getirir ve ayrıca o sildiğin şeyin children larını da siler, kısaca o ve ona bağlı olan herşeyi siler. 
+
+Debris destroy la nerdeyse aynı çelışır ama senin belirlediğin bir süreden sonra bunu gerçekleştirir. 
+
+Örnek kullanımlar:
+
+part:Remove
+
+part:Destroy
+
+game.Debris:Addİtem(part, nezaman silinsin)
+
+part burda silmek istediğim şeyin bir örneği bu başka bişeyler de olabilir
